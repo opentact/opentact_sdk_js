@@ -3,17 +3,12 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Opentact Demo</title>
-    <script type="text/javascript">
-        var require = {
-            waitSeconds: 15,
-            urlArgs : "bust="+new Date().getTime()
-        };
-    </script>
     <script data-main="scripts/main" src="scripts/require.js"></script>
 </head>
 <body>
     <h1>Opentact Demo</h1>
-    <video id="remoteVideo"></video>
-    <video id="localVideo" muted="muted"></video>
+    <audio id="audio-remote" autoplay="autoplay" />
+    <video id="video-remote" autoplay="autoplay" />
+    <video id="video-local" autoplay="autoplay" muted="true" />
 </body>
 </html>
