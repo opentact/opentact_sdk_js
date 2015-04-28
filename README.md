@@ -26,25 +26,23 @@ This SDK contains wapper code used to communicate with opentact platform.
 ## Usage
 
     require(["opentact"], function(opentact) {
-        // Get singleton instance
         var sdk = opentact.SDK.getInstance();
         var rest = opentact.Rest.getInstance();
 
-        // Set options
-        var options = {sid: '54ddd9e6afd12966c2ea9589',
-            ssid: '54e05227afd12909af009c5e',
-            authToken: '88e77509bd0e4dc89b8e915a8db25ebe',
-            remoteElement: 'remoteVideo',
-            localElement: 'localVideo',
-            onRegistered: function(){},
-            onDisconnected: function(){},
-            onIncoming: function() {}};
+        var options = {sid: '55288821afd1293a0540a3d4',
+            ssid: '552888a9afd129390300f9fc',
+            authToken: '875f27edf68d4d79adf1e803a891ae2e',
+            audioRemoteElement: 'audio-remote',
+            videoRemoteElement: 'video-remote',
+            videoLocalElement: 'video-local'};
 
         sdk.setOptions(options);
 
-        // Start Voice
         sdk.startUpVoice(function() {
             // OnRegistered callback
+
+            // now make a call to sid
+            sdk.makeCallToSid("552888afafd129390300f9fe");
         }, function() {
             // OnDisconnected
         }, function(sid) {
@@ -54,8 +52,9 @@ This SDK contains wapper code used to communicate with opentact platform.
             sdk.answerCall();
         });
 
-        // make a call to sid
-        sdk.makeCallToSid("54e05211afd12909af009c5c");
+        sdk.startIM(function() {
+
+        });
 
         // send message to sid
         sdk.sendMessage({
